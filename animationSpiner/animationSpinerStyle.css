@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fabc20;
+  min-height: 100vh;
+}
+
+.spiners_flex {
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  height: 100vh;
+}
+
+.spinner{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.spiners {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+
+  animation: spinFirst 1.2s linear infinite;
+}
+
+@keyframes spinFirst {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* spiners2 */
+
+.spiners2 {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+
+  animation: spin2 1.2s linear infinite;
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    scale: 1.5;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* spiners3 */
+.spiners3 {
+  position: relative;
+}
+
+.spiners3:before,
+.spiners3:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 4px solid transparent;
+  border-radius: 50%;
+}
+
+.spiners3:before {
+  width: 60px;
+  height: 60px;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  border-top-color: rgba(#fff, 0);
+  border-left-color: rgba(#fff, 0);
+  top: 0px;
+  left: 0px;
+  animation: rotate-animation 1s linear 0s infinite;
+}
+
+.spiners3:after {
+  width: 40px;
+  height: 40px;
+  border-bottom-color: #fff;
+  border-right-color: #fff;
+  border-top-color: rgba(#fff, 0);
+  border-left-color: rgba(#fff, 0);
+  top: 10px;
+  left: 10px;
+  animation: anti-rotate-animation 0.85s linear 0s infinite;
+}
+
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anti-rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* spiners4 */
+.spiners4{
+  position: relative;
+}
+
+.spiners4::before,.spiners4::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.spiners4::before{
+  border: 4px solid #fff;
+  animation: spin4Before 1.2s linear infinite;
+  z-index: 1;
+}
+.spiners4::after{
+  border: 4px dashed #fff;
+  animation: spin4After 1.2s linear infinite;
+  
+}
+
+@keyframes spin4Before {
+  0%, 100%{
+    transform: scale(0);
+  }
+  50%{
+    transform: scale(1);
+  }
+}
+@keyframes spin4After {
+  50%{
+    transform: scale(0);
+  }
+}
+
+/* spiners5 */
+.spiners5{
+  position: relative;
+  /* border: 4px solid #fff; */
+}
+
+
+.spiners5::before,.spiners5::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: 4px solid #fff;
+  animation: spin5Before 1s linear infinite;
+}
+
+@keyframes spin5Before{
+  from{
+    transform: scale(0);
+
+  }
+  to{
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/* spiners6 */
+.spiners6{
+  position: relative;
+  border: 4px solid #fff;
+}
+
+.spiners6::after{
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 16px solid transparent;
+  
+  animation: spin6Afret 2s alternate linear infinite;
+}
+
+@keyframes spin6Afret{
+  0%{
+    border-top: 16px solid transparent;
+  }
+  25%{
+    border-top: 16px solid #fff;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+  }
+  50%{
+    border-top: 16px solid #fff;
+    border-right: 16px solid #fff;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid transparent;
+  }
+  75%{
+    border-top: 16px solid #fff;
+    border-right: 16px solid #fff;
+    border-bottom: 16px solid #fff;
+    border-left: 16px solid transparent;
+  }
+  100%{
+    border-top: 16px solid #fff;
+    border-right: 16px solid #fff;
+    border-bottom: 16px solid #fff;
+    border-left:  16px solid #fff;
+  }
+}
